@@ -1,6 +1,12 @@
 covid_cajamar
 ==============================
 
+## TO DO
+- [ ] Generate better visualizations
+- [ ] Generate visualizations in a web app
+- [ ] Serve the web app visualizations in a Docker container
+that runs all extractions scripts and start the app
+
 Data gathering and visualization for covid data from Cajamar city.
 
 Project Organization
