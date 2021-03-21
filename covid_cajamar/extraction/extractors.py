@@ -46,3 +46,21 @@ class CovidDataExtractor(Extractor):
 
     def extract(self):
         self.write(self.preprocess(self.read()))
+
+
+class CovidDataPreDiseaseExtractor(Extractor):
+    def extract(self):
+        self.write(self.preprocess(self.read()))
+
+    def read(self):
+        dataset = settings.covid_data_pre_disease_dataset
+        return pd.read_csv(
+            dataset["path"], usecols=dataset["columns"], compression="zip", sep=";"
+        )
+
+    def write(self, df):
+        dataset = settings.interim_covid_data_pre_disease_dataset
+        df.to_csv(dataset["path"], index=False)
+
+    def preprocess(self, df: pd.DataFrame) -> pd.DataFrame:
+        return df[df["codigo_ibge"] == settings.ibge_code_cajamar]
