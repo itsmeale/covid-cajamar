@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "covid_cajamar"
+version = "0.1.0"
+description = ""
+authors = ["Alexandre Farias <0800alefarias@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.8.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "6.2.2"
+black = "20.8b1"
+isort = "5.7.0"
+pylama = "7.7.1"
+numpy = "1.20.1"
+pandas = "1.2.3"
+jupyterlab = "3.0.10"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poetry.scripts]
+fmt = "scripts.code_quality:do_code_formatting"
+isort-fmt = "scripts.code_quality:sort_import_order"
+fmt-check = "scripts.code_quality:check_code_formatting"
+isort-check = "scripts.code_quality:check_import_order"
+linter = "scripts.code_quality:linter"
+tests = "scripts.code_quality:run_tests"
