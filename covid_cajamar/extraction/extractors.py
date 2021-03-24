@@ -32,8 +32,7 @@ class CovidDataExtractor(Extractor):
         )
 
     def preprocess(self, df: pd.DataFrame) -> pd.DataFrame:
-        filtered_df = df[df["codigo_ibge"] == settings.ibge_code_cajamar]
-        fixed_float_cold_df = CovidDataExtractor._parse_calculated_columns(filtered_df)
+        fixed_float_cold_df = CovidDataExtractor._parse_calculated_columns(df)
         return fixed_float_cold_df
 
     def write(self, df: pd.DataFrame) -> bool:
@@ -50,7 +49,7 @@ class CovidDataExtractor(Extractor):
 
 class CovidDataPreDiseaseExtractor(Extractor):
     def extract(self):
-        self.write(self.preprocess(self.read()))
+        self.write(self.read())
 
     def read(self):
         dataset = settings.covid_data_pre_disease_dataset
@@ -61,6 +60,3 @@ class CovidDataPreDiseaseExtractor(Extractor):
     def write(self, df):
         dataset = settings.interim_covid_data_pre_disease_dataset
         df.to_csv(dataset["path"], index=False)
-
-    def preprocess(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df[df["codigo_ibge"] == settings.ibge_code_cajamar]
