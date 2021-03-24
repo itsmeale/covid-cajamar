@@ -2,6 +2,7 @@ covid_cajamar
 ==============================
 
 ## TO DO
+- [ ] Adds a city filter to plot graphs for another cities
 - [ ] Generate better visualizations
 - [ ] Generate visualizations in a web app
 - [ ] Serve the web app visualizations in a Docker container
