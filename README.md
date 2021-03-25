@@ -24,12 +24,11 @@ Project Organization
 ├── notebooks                     -- storage of experimental notebooks
 ├── setup.py                      -- setup file for the module to be installable
 ├── covid_cajamar                 -- folder where the scripts are stored
-│   ├── app                       -- feature engineering scripts
-│   ├── extraction                -- feature engineering scripts
-│   ├── features                  -- feature engineering scripts
-│   ├── interfaces                -- feature engineering scripts
-│   ├── pipelines                 -- feature engineering scripts
-│   └── config.py                 -- model training scripts
+│   ├── app                       -- main streamlit app code
+│   ├── extraction                -- scripts for data extraction
+│   ├── interfaces                -- abstract classes
+│   ├── pipelines                 -- data collection and processing pipelines
+│   └── config.py                 -- enviroment parameters
 ├── tests                         -- folder with test scripts
 ├── scripts                       -- folder with bash scripts used for setup the project
 ├── README.md                     -- description of what the project consists of, how to reproduce it and how to contribute
