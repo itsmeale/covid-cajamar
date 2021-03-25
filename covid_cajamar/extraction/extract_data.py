@@ -1,7 +1,5 @@
-from covid_cajamar.extraction.extractors import (
-    CovidDataExtractor,
-    CovidDataPreDiseaseExtractor,
-)
+from covid_cajamar.extraction.extractors import (CovidDataExtractor,
+                                                 CovidDataPreDiseaseExtractor)
 
 if __name__ == "__main__":
     covid_data_extractor = CovidDataExtractor()

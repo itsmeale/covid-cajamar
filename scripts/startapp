@@ -1,0 +1,3 @@
+#!/bin/bash
+python3 covid_cajamar/pipelines/data_extraction.py
+streamlit run covid_cajamar/app/main.py

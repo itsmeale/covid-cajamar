@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# tested on Ubuntu 20.04 only
+sudo apt install -y --no-install-recomends python3-dev python3-pip
+pip3 install poetry
+poetry shell
+poetry install

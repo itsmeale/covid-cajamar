@@ -11,9 +11,5 @@ class Extractor(ABC):
         raise NotImplementedError("method not implemented")
 
     @abstractclassmethod
-    def preprocess():
-        raise NotImplementedError("method not implemented")
-
-    @abstractclassmethod
     def write():
         raise NotImplementedError("method not implemented")
